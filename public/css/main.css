@@ -1,0 +1,85 @@
+body {
+	font-family: courier;
+	-webkit-user-select: none;
+	transition: all 0.35s;
+}
+.red {
+	background-color: #FF7163;
+}
+.blue {
+	background-color: #4B97FB;
+	
+}
+.green {
+	background-color: #8BFAA8;
+}
+.orange {
+	background-color: #FBD667;
+}
+
+h1 {
+	font-size: 34px;
+	margin-bottom: 20px;
+}
+.score-shape {
+	margin-bottom: 30px;	
+}
+.game__screen {
+	margin: 100px auto;
+	max-width: 800px;
+	text-align: center;
+}
+.scoreboard {
+	background-color: #F3F1F1;
+	padding: 40px;
+}
+.score,
+.name {
+	width: 100%;
+}
+
+.player__scores {
+	width: 80%;
+	float: left;
+}
+
+.player__names {
+	width: 20%;
+	float: left;
+}
+.name {
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 10px;
+}
+
+.score {
+	height: 40px;
+	margin-bottom: 10px;
+	background-color: #555;
+}
+
+.score.sam {
+	width: 40%;
+}
+
+.score.louise {
+	width: 20%;
+}
+
+
+/* Controller */
+.player__controller {
+	text-align: center;
+}
+.shape {
+	text-align: center;
+}
+.shape img {
+	width: 100px;
+}
+
+.distract-text {
+	font-size: 28px;
+	/*transform: translateY(-80px);*/
+}

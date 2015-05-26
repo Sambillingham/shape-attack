@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+    main.game__screen
+
+        h1 Shape Attack
+        .score-shape
+            img(src="/img/blue-circle.png")
+            .distract-text bue
+        
+        .scoreboard.group
+            .player__names
+                .sam.name Sam
+                .katie.name Katie
+                .louise.name Louise
+                .tim.name Tim
+                .sam-m.name Sam M
+
+            .player__scores
+                .sam.score
+                .katie.score
+                .louise.score
+                .tim.score
+                .sam-m.score
+
+
+
+                
+        script(src="/js/jquery-1.11.3.min.js")
+        script(src="/socket.io/socket.io.js")
+        script(src='/js/game.js')

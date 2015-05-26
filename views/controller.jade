@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+    main.player__controller
+
+        h1 Controller
+
+        .square.shape(data-shape="square")
+            img(src="/img/square.png")
+        .circle.shape(data-shape="circle")
+            img(src="/img/circle.png")
+        .hex.shape(data-shape="hex")
+            img(src="/img/hex.png")
+        .triangle.shape(data-shape="triangle")
+            img(src="/img/triangle.png")
+
+        script(src="/js/jquery-1.11.3.min.js")
+        script(src="/socket.io/socket.io.js")
+        script(src='/js/player.js')
