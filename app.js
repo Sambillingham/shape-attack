@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 //routes 
-server.listen(8080, function(){
+server.listen(process.env.PORT || 8080, function(){
 	console.log('starting server...');
 });
 
