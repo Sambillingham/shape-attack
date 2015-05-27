@@ -9,6 +9,7 @@ var io = require('socket.io').listen(server);
 // Modules
 var socketsController = require("./controllers/socketsController");
 
+app.set('port', process.env.PORT || 3000)
 //set up static files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -16,9 +17,10 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 //routes 
-server.listen(process.env.PORT || 8080, function(){
-	console.log('starting server...');
+app.listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + app.get('port'));
 });
+
 
 app.get('/', function(res,res){
 	res.render('index');
