@@ -1,11 +1,10 @@
-console.log('good to go');
 
 var app = {
 	init: function(){
-
 		this.socketConnect();
 		this.socketEvents();
 
+		//  UI Actions
 		this.uiActions();
 		this.deviceMove();
 	},
@@ -13,29 +12,22 @@ var app = {
         this.socket = io();
 
         this.player = prompt('what is your name?');
-
         $('h1').text(this.player);
 
-        this.socket.emit('player', { data : this.player } );
+        this.socket.emit('player', { name : this.player } );
     },
     socketEvents : function() {
 
-        this.socket.on('update-status', function(data){
-            this.displayStatus(data);
-        }.bind(this));
+    	// incomming events here
 
     },
     deviceMove: function(){
 
     	window.ondeviceorientation = function(event) {
 
-            var deviceDirection = Math.floor(event.alpha),
-                deviceRollY     = Math.floor(event.beta),
-                deviceRollX     = Math.floor(event.gamma);
-
+            var deviceRollX = Math.floor(event.gamma);
 
         	switch(true){
-
         		case (deviceRollX < -40) :
         			this.setColor('red')
         		break;
@@ -46,7 +38,7 @@ var app = {
         			this.setColor('blue')
         		break;
         		case (deviceRollX > 0) :
-        			this.setColor('orange')
+        			this.setColor('yellow')
         		break;
         	}
 
@@ -63,7 +55,6 @@ var app = {
     	var self = this;
 
     	$('.shape').on('touchend', function(){
-	    	$('body').removeClass('');
 
 	        self.socket.emit('shape', {
 	        	player : self.player ,
@@ -71,16 +62,7 @@ var app = {
 	        	color: self.currentColor
 
 	        });
-	        console.log({
-	        	player : self.player ,
-	        	shape: $(this).data('shape'),
-	        	color: self.currentColor
-
-	        })
-
     	});
-
-
     }
 }
 

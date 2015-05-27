@@ -3,10 +3,7 @@ var app = require('../app');
 module.exports.init = function(socket){
 
     socket.on('player',  function(data){
-        console.log(' connection good ', data );
-
-        app.io.sockets.emit('game-players', { player: data.player } );
-
+        app.io.sockets.emit('new-player', data );
     });
 
     socket.on('shape', function(data){

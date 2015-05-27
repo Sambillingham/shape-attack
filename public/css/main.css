@@ -3,19 +3,6 @@ body {
 	-webkit-user-select: none;
 	transition: all 0.35s;
 }
-.red {
-	background-color: #FF7163;
-}
-.blue {
-	background-color: #4B97FB;
-	
-}
-.green {
-	background-color: #8BFAA8;
-}
-.orange {
-	background-color: #FBD667;
-}
 
 h1 {
 	font-size: 34px;
@@ -25,13 +12,14 @@ h1 {
 	margin-bottom: 30px;	
 }
 .game__screen {
-	margin: 100px auto;
-	max-width: 800px;
+	padding: 100px 0 0 0;
 	text-align: center;
 }
 .scoreboard {
+	margin: auto;
+	max-width: 800px;
 	background-color: #F3F1F1;
-	padding: 40px;
+	padding: 50px;
 }
 .score,
 .name {
@@ -39,12 +27,12 @@ h1 {
 }
 
 .player__scores {
-	width: 80%;
+	width: 550px;
 	float: left;
 }
 
 .player__names {
-	width: 20%;
+	width: 150px;
 	float: left;
 }
 .name {
@@ -57,18 +45,24 @@ h1 {
 	height: 40px;
 	margin-bottom: 10px;
 	background-color: #555;
+	width: 0;
 }
-
-.score.sam {
-	width: 40%;
-}
-
-.score.louise {
-	width: 20%;
-}
-
 
 /* Controller */
+.red {
+	background-color: #FF7163;
+}
+.blue {
+	background-color: #4B97FB;
+	
+}
+.green {
+	background-color: #8BFAA8;
+}
+.yellow {
+	background-color: #FBD667;
+}
+
 .player__controller {
 	text-align: center;
 }
@@ -81,5 +75,20 @@ h1 {
 
 .distract-text {
 	font-size: 28px;
-	/*transform: translateY(-80px);*/
+}
+.game-over {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #444;
+	color: #fafafa;
+	padding: 300px;
+	display: none;
+}
+
+.game-over .player {
+	text-align: center;
+	font-size: 44px;
 }
